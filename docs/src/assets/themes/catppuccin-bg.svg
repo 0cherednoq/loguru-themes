@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="226" viewBox="0 0 495 226" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+<rect width="495" height="226" rx="10" fill="#1e1e2e"/>
+<circle cx="22" cy="17" r="6" fill="#ff5f56"/>
+<circle cx="42" cy="17" r="6" fill="#ffbd2e"/>
+<circle cx="62" cy="17" r="6" fill="#27c93f"/>
+<text x="248" y="22" fill="#6c7086" font-size="13" text-anchor="middle">catppuccin · colored backgrounds</text>
+<rect x="99.0" y="46.0" width="90.0" height="19" rx="3" fill="#a6e3a1"/>
+<text x="18.0" y="58" fill="#6c7086" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
+<text x="99.0" y="58" fill="#11111b" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  DEPLOY  </text>
+<text x="198.0" y="58" fill="#cdd6f4" font-weight="400" textLength="198.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">release v1.4.2 shipped</text>
+<rect x="99.0" y="72.0" width="90.0" height="19" rx="3" fill="#89b4fa"/>
+<text x="18.0" y="84" fill="#6c7086" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
+<text x="99.0" y="84" fill="#11111b" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  CACHE   </text>
+<text x="198.0" y="84" fill="#cdd6f4" font-weight="400" textLength="279.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">served 1.2k requests from cache</text>
+<rect x="99.0" y="98.0" width="90.0" height="19" rx="3" fill="#94e2d5"/>
+<text x="18.0" y="110" fill="#6c7086" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
+<text x="99.0" y="110" fill="#11111b" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    DB    </text>
+<text x="198.0" y="110" fill="#cdd6f4" font-weight="400" textLength="207.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">query completed in 18ms</text>
+<rect x="99.0" y="124.0" width="90.0" height="19" rx="3" fill="#f9e2af"/>
+<text x="18.0" y="136" fill="#6c7086" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
+<text x="99.0" y="136" fill="#11111b" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  RETRY   </text>
+<text x="198.0" y="136" fill="#cdd6f4" font-weight="400" textLength="216.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">attempt 3/5, backing off</text>
+<rect x="99.0" y="150.0" width="90.0" height="19" rx="3" fill="#f5c2e7"/>
+<text x="18.0" y="162" fill="#6c7086" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
+<text x="99.0" y="162" fill="#11111b" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   AUTH   </text>
+<text x="198.0" y="162" fill="#cdd6f4" font-weight="400" textLength="243.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">token refreshed for user 42</text>
+<rect x="99.0" y="176.0" width="90.0" height="19" rx="3" fill="#f38ba8"/>
+<text x="18.0" y="188" fill="#6c7086" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
+<text x="99.0" y="188" fill="#11111b" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  ALERT   </text>
+<text x="198.0" y="188" fill="#cdd6f4" font-weight="400" textLength="153.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">disk usage at 94%</text>
+</svg>

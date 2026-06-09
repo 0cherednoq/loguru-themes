@@ -40,6 +40,22 @@ window's title bar):
 
 ![light theme log output](../../assets/themes/light.svg)
 
+## Logs with colored backgrounds
+
+Highlight tags on background colors from the palette (text auto-contrasted):
+
+![dracula logs with colored backgrounds](../../assets/themes/dracula-bg.svg)
+
+![nord logs with colored backgrounds](../../assets/themes/nord-bg.svg)
+
+![catppuccin logs with colored backgrounds](../../assets/themes/catppuccin-bg.svg)
+
+![monokai logs with colored backgrounds](../../assets/themes/monokai-bg.svg)
+
+![dark logs with colored backgrounds](../../assets/themes/dark-bg.svg)
+
+![light logs with colored backgrounds](../../assets/themes/light-bg.svg)
+
 ## Palette (background colors)
 
 The 16-color palette of each theme — the colors native tags like `<red>` /
