@@ -24,5 +24,8 @@ Issues = "https://github.com/0cherednoq/loguru-themes/issues"
 [tool.hatch.build.targets.wheel]
 packages = ["loguru_themes"]
 
+[tool.hatch.build.targets.sdist]
+include = ["/loguru_themes", "/tests", "/examples", "/README.md", "/LICENSE"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
