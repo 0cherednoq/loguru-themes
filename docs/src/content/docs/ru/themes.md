@@ -23,6 +23,22 @@ from loguru_themes import apply_theme
 apply_theme(logger, "monokai")
 ```
 
+## Превью
+
+Пример вывода всех уровней под каждой темой (имя темы — в заголовке окна):
+
+![вывод темы dracula](../../../assets/themes/dracula.svg)
+
+![вывод темы nord](../../../assets/themes/nord.svg)
+
+![вывод темы catppuccin](../../../assets/themes/catppuccin.svg)
+
+![вывод темы monokai](../../../assets/themes/monokai.svg)
+
+![вывод темы dark](../../../assets/themes/dark.svg)
+
+![вывод темы light](../../../assets/themes/light.svg)
+
 ## Список тем
 
 ```python

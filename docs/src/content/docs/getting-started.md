@@ -34,6 +34,8 @@ logger.critical("data corruption detected — aborting")  # bold on red backgrou
 handlers — the idiomatic loguru setup) and installs a single themed sink. Each
 level gets its theme color, and the level icon shares that color.
 
+![dracula theme log output](../../assets/themes/dracula.svg)
+
 ## Choosing a theme
 
 Pass any built-in name (autocompleted by your IDE) or a `Theme` object:

@@ -23,6 +23,23 @@ from loguru_themes import apply_theme
 apply_theme(logger, "monokai")
 ```
 
+## Previews
+
+Sample output of every level under each theme (the theme name is shown in each
+window's title bar):
+
+![dracula theme log output](../../assets/themes/dracula.svg)
+
+![nord theme log output](../../assets/themes/nord.svg)
+
+![catppuccin theme log output](../../assets/themes/catppuccin.svg)
+
+![monokai theme log output](../../assets/themes/monokai.svg)
+
+![dark theme log output](../../assets/themes/dark.svg)
+
+![light theme log output](../../assets/themes/light.svg)
+
 ## Listing themes
 
 ```python

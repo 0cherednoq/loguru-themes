@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="648" height="252" viewBox="0 0 648 252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+<rect width="648" height="252" rx="10" fill="#0d1117"/>
+<circle cx="22" cy="17" r="6" fill="#ff5f56"/>
+<circle cx="42" cy="17" r="6" fill="#ffbd2e"/>
+<circle cx="62" cy="17" r="6" fill="#27c93f"/>
+<text x="324" y="22" fill="#6b7280" font-size="13" text-anchor="middle">dark</text>
+<text xml:space="preserve" y="58"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#6b7280" font-weight="400">› TRACE   </tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#e5e7eb" font-weight="400">entering low-level routine</tspan></text>
+<text xml:space="preserve" y="84"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#38bdf8" font-weight="400">• DEBUG   </tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#e5e7eb" font-weight="400">resolved config from environment</tspan></text>
+<text xml:space="preserve" y="110"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#e5e7eb" font-weight="400">• INFO    </tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#e5e7eb" font-weight="400">server listening on http://localhost:8000</tspan></text>
+<text xml:space="preserve" y="136"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#22c55e" font-weight="400">✔ SUCCESS </tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#e5e7eb" font-weight="400">migration completed in 1.2s</tspan></text>
+<text xml:space="preserve" y="162"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#f59e0b" font-weight="400">! WARNING </tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#e5e7eb" font-weight="400">cache miss rate above 30%</tspan></text>
+<text xml:space="preserve" y="188"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#ef4444" font-weight="400">✖ ERROR   </tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#ef4444" font-weight="400">failed to reach upstream service</tspan></text>
+<rect x="258.0" y="202.0" width="324.0" height="19" rx="3" fill="#ef4444"/>
+<text xml:space="preserve" y="214"><tspan x="18" fill="#6b7280">10:30:00 </tspan><tspan fill="#f43f5e" font-weight="700">✖ CRITICAL</tspan><tspan fill="#6b7280"> app:42 </tspan><tspan fill="#f8fafc" font-weight="700">data corruption detected — aborting</tspan></text>
+</svg>
