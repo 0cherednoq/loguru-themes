@@ -1,36 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="648" height="252" viewBox="0 0 648 252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
-<rect width="648" height="252" rx="10" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="607" height="252" viewBox="0 0 607 252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+<rect width="607" height="252" rx="10" fill="#0d1117"/>
 <circle cx="22" cy="17" r="6" fill="#ff5f56"/>
 <circle cx="42" cy="17" r="6" fill="#ffbd2e"/>
 <circle cx="62" cy="17" r="6" fill="#27c93f"/>
-<text x="324" y="22" fill="#6b7280" font-size="13" text-anchor="middle">dark</text>
-<text x="18.0" y="58" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="58" fill="#6b7280" font-weight="400" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">› TRACE   </text>
-<text x="198.0" y="58" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="58" fill="#e5e7eb" font-weight="400" textLength="234.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">entering low-level routine</text>
-<text x="18.0" y="84" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="84" fill="#38bdf8" font-weight="400" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">• DEBUG   </text>
-<text x="198.0" y="84" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="84" fill="#e5e7eb" font-weight="400" textLength="288.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">resolved config from environment</text>
-<text x="18.0" y="110" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="110" fill="#e5e7eb" font-weight="400" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">• INFO    </text>
-<text x="198.0" y="110" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="110" fill="#e5e7eb" font-weight="400" textLength="369.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">server listening on http://localhost:8000</text>
-<text x="18.0" y="136" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="136" fill="#22c55e" font-weight="400" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✔ SUCCESS </text>
-<text x="198.0" y="136" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="136" fill="#e5e7eb" font-weight="400" textLength="243.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">migration completed in 1.2s</text>
-<text x="18.0" y="162" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="162" fill="#f59e0b" font-weight="400" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">! WARNING </text>
-<text x="198.0" y="162" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="162" fill="#e5e7eb" font-weight="400" textLength="225.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cache miss rate above 30%</text>
-<text x="18.0" y="188" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="188" fill="#ef4444" font-weight="400" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✖ ERROR   </text>
-<text x="198.0" y="188" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="188" fill="#ef4444" font-weight="400" textLength="288.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">failed to reach upstream service</text>
-<rect x="258.0" y="202.0" width="321.0" height="19" rx="3" fill="#ef4444"/>
-<text x="18.0" y="214" fill="#6b7280" font-weight="400" textLength="72.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">10:30:00</text>
-<text x="99.0" y="214" fill="#f43f5e" font-weight="700" textLength="90.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✖ CRITICAL</text>
-<text x="198.0" y="214" fill="#6b7280" font-weight="400" textLength="54.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">app:42</text>
-<text x="261.0" y="214" fill="#f8fafc" font-weight="700" textLength="315.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">data corruption detected — aborting</text>
+<text x="304" y="22" fill="#6b7280" font-size="13" text-anchor="middle">dark</text>
+<text x="18.0" y="58" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="58" fill="#6b7280" font-weight="400" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">› TRACE   </text>
+<text x="186.0" y="58" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="58" fill="#e5e7eb" font-weight="400" textLength="218.4" lengthAdjust="spacing" xml:space="preserve">entering low-level routine</text>
+<text x="18.0" y="84" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="84" fill="#38bdf8" font-weight="400" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">• DEBUG   </text>
+<text x="186.0" y="84" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="84" fill="#e5e7eb" font-weight="400" textLength="268.8" lengthAdjust="spacing" xml:space="preserve">resolved config from environment</text>
+<text x="18.0" y="110" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="110" fill="#e5e7eb" font-weight="400" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">• INFO    </text>
+<text x="186.0" y="110" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="110" fill="#e5e7eb" font-weight="400" textLength="344.4" lengthAdjust="spacing" xml:space="preserve">server listening on http://localhost:8000</text>
+<text x="18.0" y="136" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="136" fill="#22c55e" font-weight="400" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">✔ SUCCESS </text>
+<text x="186.0" y="136" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="136" fill="#e5e7eb" font-weight="400" textLength="226.8" lengthAdjust="spacing" xml:space="preserve">migration completed in 1.2s</text>
+<text x="18.0" y="162" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="162" fill="#f59e0b" font-weight="400" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">! WARNING </text>
+<text x="186.0" y="162" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="162" fill="#e5e7eb" font-weight="400" textLength="210.0" lengthAdjust="spacing" xml:space="preserve">cache miss rate above 30%</text>
+<text x="18.0" y="188" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="188" fill="#ef4444" font-weight="400" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">✖ ERROR   </text>
+<text x="186.0" y="188" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="188" fill="#ef4444" font-weight="400" textLength="268.8" lengthAdjust="spacing" xml:space="preserve">failed to reach upstream service</text>
+<rect x="244.8" y="201.0" width="294.0" height="21" fill="#ef4444"/>
+<text x="18.0" y="214" fill="#6b7280" font-weight="400" textLength="67.2" lengthAdjust="spacing" xml:space="preserve">10:30:00</text>
+<text x="93.6" y="214" fill="#f43f5e" font-weight="700" textLength="84.0" lengthAdjust="spacing" xml:space="preserve">✖ CRITICAL</text>
+<text x="186.0" y="214" fill="#6b7280" font-weight="400" textLength="50.4" lengthAdjust="spacing" xml:space="preserve">app:42</text>
+<text x="244.8" y="214" fill="#f8fafc" font-weight="700" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">data corruption detected — aborting</text>
 </svg>

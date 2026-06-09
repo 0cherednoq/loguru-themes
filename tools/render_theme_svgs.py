@@ -41,7 +41,10 @@ TIME = "10:30:00"
 LOC = "app:42"
 
 FS = 15
-CW = 9.0       # grid cell width per character (text is fit to this exactly)
+# Grid cell width per character. Tuned to a typical monospace advance (~0.56em)
+# so the spacing adjustment is minimal and the layout stays tight like a real
+# terminal. We only adjust spacing (never glyph shapes) — see _seg().
+CW = 8.4
 LH = 26
 LEFT = 18
 TITLE_H = 34
@@ -75,7 +78,7 @@ def _seg(x_col: int, text: str, fill: str, weight: int) -> str:
     return (
         f'<text x="{LEFT + x_col * CW:.1f}" y="{{y}}" fill="{fill}" '
         f'font-weight="{weight}" textLength="{len(text) * CW:.1f}" '
-        f'lengthAdjust="spacingAndGlyphs" xml:space="preserve">{esc(text)}</text>'
+        f'lengthAdjust="spacing" xml:space="preserve">{esc(text)}</text>'
     )
 
 
@@ -116,8 +119,8 @@ def render_log(name: str) -> str:
         if st.msg_bg:
             x = LEFT + msg_col * CW
             p.append(
-                f'<rect x="{x - 3:.1f}" y="{y - FS + 3:.1f}" '
-                f'width="{len(msg) * CW + 6:.1f}" height="{LH - 7}" rx="3" '
+                f'<rect x="{x:.1f}" y="{y - FS + 2:.1f}" '
+                f'width="{len(msg) * CW:.1f}" height="{LH - 5}" '
                 f'fill="{st.msg_bg}"/>'
             )
         badge = f"{t.icons.get(lvl)} {lvl:<8}"
@@ -153,7 +156,7 @@ def render_palette(name: str) -> str:
             hexv = getattr(pal, cname)
             x = LEFT + i * (cell_w + gap)
             label = prefix + cname.replace("bright_", "")
-            p.append(f'<rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" rx="5" fill="{hexv}"/>')
+            p.append(f'<rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" fill="{hexv}"/>')
             p.append(
                 f'<text x="{x + cell_w / 2:.0f}" y="{y + cell_h / 2 + 4:.0f}" '
                 f'fill="{readable(hexv)}" font-size="12" text-anchor="middle">{esc(label)}</text>'
@@ -182,8 +185,8 @@ def render_bg(name: str) -> str:
         y = TOP + idx * LH
         bx = LEFT + badge_col * CW
         p.append(
-            f'<rect x="{bx:.1f}" y="{y - FS + 3:.1f}" width="{10 * CW:.1f}" '
-            f'height="{LH - 7}" rx="3" fill="{color}"/>'
+            f'<rect x="{bx:.1f}" y="{y - FS + 2:.1f}" width="{10 * CW:.1f}" '
+            f'height="{LH - 5}" fill="{color}"/>'
         )
         badge = f" {tag:^8} "
         for s in (
