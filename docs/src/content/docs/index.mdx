@@ -1,0 +1,52 @@
+---
+title: loguru-themes
+description: Curated color themes and Unicode level icons for loguru, applied in one call.
+template: splash
+hero:
+  tagline: Curated color themes and minimalist Unicode level icons for loguru — applied to any logger in one call.
+  actions:
+    - text: Get started
+      link: getting-started/
+      icon: right-arrow
+    - text: Browse examples
+      link: examples/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+```python
+from loguru import logger
+from loguru_themes import apply_theme
+
+apply_theme(logger, "dracula")
+
+logger.info("server listening on http://localhost:8000")
+logger.success("migration completed in 1.2s")
+logger.warning("cache miss rate above 30%")
+logger.error("failed to reach upstream service")
+logger.critical("data corruption detected — aborting")
+```
+
+<CardGrid stagger>
+  <Card title="Curated themes" icon="seti:default">
+    `dracula`, `nord`, `catppuccin`, `monokai`, plus neutral `dark` and `light`.
+  </Card>
+  <Card title="One call" icon="rocket">
+    `apply_theme(logger, "dracula")` sets the format, per-level colors, and icons.
+  </Card>
+  <Card title="Unicode icons" icon="star">
+    Minimalist per-level symbols (`✔ ✖ ! • ›`) — no special fonts needed.
+  </Card>
+  <Card title="Real color scheme" icon="puzzle">
+    Native loguru tags (`<red>`, `<blue>`, …) follow the theme palette.
+  </Card>
+</CardGrid>
+
+## Install
+
+```bash
+pip install loguru-themes
+```
+
+Then head to [Getting started](getting-started/).

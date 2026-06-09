@@ -1,0 +1,41 @@
+# loguru-themes
+
+> Curated color themes (Dracula, Nord, Catppuccin, Monokai, plus neutral dark/light)
+> and minimalist Unicode level icons for the `loguru` logging library, applied to any
+> logger in a single call: `apply_theme(logger, "dracula")`. A theme also acts as a
+> full terminal color scheme — loguru's native color tags (`<red>`, `<blue>`, …)
+> follow the theme's palette.
+
+Key facts for using the library:
+
+- Primary entry point: `apply_theme(logger, theme, *, icons=True, sink=None, level="TRACE", colorize=None, replace=True, remap_colors=True)`.
+- Built-in theme names: `dracula`, `nord`, `catppuccin`, `monokai`, `dark`, `light` (case-insensitive; `list_themes()` lists them; `ThemeName` is a `Literal` for autocomplete).
+- Themes are immutable and customizable via chainable `with_*` helpers (`with_color`, `with_icon`, `with_icons`, `with_fg`, `with_uniform_message`, `with_level`, `with_palette`, …).
+- Per-level icons are plain Unicode; override with `icons=False`, a full `IconSet`, or a mapping like `icons={"error": "!!"}`.
+- Built-in highlights: ERROR message text is red; CRITICAL is bold on a red background.
+- Lower-level building blocks: `configure_levels(logger, theme)` (colors + icons, no sink) and `build_format(theme)` (the loguru `format` value) let you keep your own sinks/format.
+- Color-scheme remapping is process-global; opt out with `remap_colors=False`, undo with `restore_palette()`, or scope with `using_palette(palette)`.
+- Requires Python 3.9+ and `loguru>=0.7`. Install: `pip install loguru-themes`.
+
+## Documentation
+
+- [Getting started](/getting-started/): install and apply your first theme
+- [Themes](/themes/): the built-in themes, listing, and looking them up
+- [Icons](/icons/): per-level icons — disable, replace, or override inline
+- [Customizing](/customizing/): tweak a theme with `with_*` and build custom themes
+- [Color scheme](/color-scheme/): native loguru color tags follow the theme palette
+- [Use your own logger](/own-logger/): `configure_levels` + `build_format` with your own sinks
+- [API reference](/api-reference/): public functions and types
+
+Russian translations are available under the same paths prefixed with `/ru/`
+(e.g. [/ru/getting-started/](/ru/getting-started/)).
+
+## Examples
+
+- [examples/01_quickstart.py](examples/01_quickstart.py): apply a theme in one line; all levels
+- [examples/02_customize.py](examples/02_customize.py): tweak a theme with the `with_*` API
+- [examples/03_color_scheme.py](examples/03_color_scheme.py): native tags follow the palette; opt-out and scoped
+
+## Optional
+
+- [README](README.md): the same material in a single file

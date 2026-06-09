@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "loguru-themes"
+version = "0.1.0"
+description = "Curated color themes and Unicode level icons for loguru, applied in one call."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["loguru", "logging", "themes", "colors", "cli", "dracula"]
+dependencies = ["loguru>=0.7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["loguru_themes"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
