@@ -24,12 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          # Auto-enable Pages on first run (no manual Settings step needed).
-          enablement: true
       - name: Build Starlight site
         uses: withastro/action@v3
         with:
