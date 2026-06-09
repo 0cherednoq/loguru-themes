@@ -13,7 +13,15 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import dracula from '../../../assets/themes/dracula.svg';
+import nord from '../../../assets/themes/nord.svg';
+import catppuccin from '../../../assets/themes/catppuccin.svg';
+import monokai from '../../../assets/themes/monokai.svg';
+import dark from '../../../assets/themes/dark.svg';
+import light from '../../../assets/themes/light.svg';
+
+export const grid = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1rem', marginTop: '1rem' };
+export const img = { width: '100%', height: 'auto' };
 
 ## Установка
 
@@ -34,44 +42,28 @@ logger.error("failed to reach upstream service")
 logger.critical("data corruption detected — aborting")
 ```
 
-<CardGrid stagger>
-  <Card title="Готовые темы" icon="seti:default">
-    `dracula`, `nord`, `catppuccin`, `monokai`, плюс нейтральные `dark` и `light`.
-  </Card>
-  <Card title="Один вызов" icon="rocket">
-    `apply_theme(logger, "dracula")` задаёт формат, цвета уровней и иконки.
-  </Card>
-  <Card title="Юникод-иконки" icon="star">
-    Минималистичные символы на уровень (`✔ ✖ ! • ›`) — без спец-шрифтов.
-  </Card>
-  <Card title="Полноценная цветовая схема" icon="puzzle">
-    Нативные теги loguru (`<red>`, `<blue>`, …) следуют палитре темы.
-  </Card>
-</CardGrid>
-
 ## Превью тем
 
 Пример вывода всех уровней под каждой встроенной темой:
 
-![вывод темы dracula](../../../assets/themes/dracula.svg)
-![вывод темы nord](../../../assets/themes/nord.svg)
-![вывод темы catppuccin](../../../assets/themes/catppuccin.svg)
-![вывод темы monokai](../../../assets/themes/monokai.svg)
-![вывод темы dark](../../../assets/themes/dark.svg)
-![вывод темы light](../../../assets/themes/light.svg)
+<div style={grid}>
+  <img src={dracula.src} alt="вывод темы dracula" style={img} />
+  <img src={nord.src} alt="вывод темы nord" style={img} />
+  <img src={catppuccin.src} alt="вывод темы catppuccin" style={img} />
+  <img src={monokai.src} alt="вывод темы monokai" style={img} />
+  <img src={dark.src} alt="вывод темы dark" style={img} />
+  <img src={light.src} alt="вывод темы light" style={img} />
+</div>
 
-## Логи с цветными фонами
+## Палитра (фоновые цвета)
 
-Логи — это не только цветной текст: теги можно подсвечивать на фоновых цветах
-палитры темы (текст автоматически контрастный для читаемости):
+16-цветная палитра, в которую тема мапит нативные теги (`<red>` / `<RED>`):
 
-![dracula логи с цветными фонами](../../../assets/themes/dracula-bg.svg)
-![nord логи с цветными фонами](../../../assets/themes/nord-bg.svg)
-![catppuccin логи с цветными фонами](../../../assets/themes/catppuccin-bg.svg)
-![monokai логи с цветными фонами](../../../assets/themes/monokai-bg.svg)
-![dark логи с цветными фонами](../../../assets/themes/dark-bg.svg)
-![light логи с цветными фонами](../../../assets/themes/light-bg.svg)
-
-Полная палитра каждой темы — на странице [Темы](themes/).
+![палитра dracula](../../../assets/themes/dracula-palette.svg)
+![палитра nord](../../../assets/themes/nord-palette.svg)
+![палитра catppuccin](../../../assets/themes/catppuccin-palette.svg)
+![палитра monokai](../../../assets/themes/monokai-palette.svg)
+![палитра dark](../../../assets/themes/dark-palette.svg)
+![палитра light](../../../assets/themes/light-palette.svg)
 
 Дальше — [Начало](getting-started/).

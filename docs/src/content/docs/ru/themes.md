@@ -39,22 +39,6 @@ apply_theme(logger, "monokai")
 
 ![вывод темы light](../../../assets/themes/light.svg)
 
-## Логи с цветными фонами
-
-Подсветка тегов на фоновых цветах палитры (текст автоматически контрастный):
-
-![dracula логи с цветными фонами](../../../assets/themes/dracula-bg.svg)
-
-![nord логи с цветными фонами](../../../assets/themes/nord-bg.svg)
-
-![catppuccin логи с цветными фонами](../../../assets/themes/catppuccin-bg.svg)
-
-![monokai логи с цветными фонами](../../../assets/themes/monokai-bg.svg)
-
-![dark логи с цветными фонами](../../../assets/themes/dark-bg.svg)
-
-![light логи с цветными фонами](../../../assets/themes/light-bg.svg)
-
 ## Палитра (фоновые цвета)
 
 16-цветная палитра каждой темы — именно в эти цвета мапятся нативные теги вроде

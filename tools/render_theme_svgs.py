@@ -52,16 +52,6 @@ TOP = TITLE_H + 24
 
 BASE = ["black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"]
 
-# Sample log lines, each highlighting a tag on a different palette background.
-BG_LINES = [
-    ("green", "DEPLOY", "release v1.4.2 shipped"),
-    ("blue", "CACHE", "served 1.2k requests from cache"),
-    ("cyan", "DB", "query completed in 18ms"),
-    ("yellow", "RETRY", "attempt 3/5, backing off"),
-    ("magenta", "AUTH", "token refreshed for user 42"),
-    ("red", "ALERT", "disk usage at 94%"),
-]
-
 
 def esc(s: str) -> str:
     return html.escape(s, quote=False)
@@ -165,40 +155,6 @@ def render_palette(name: str) -> str:
     return "\n".join(p)
 
 
-def render_bg(name: str) -> str:
-    """Log lines where a tag is rendered on each palette background color."""
-    t = get_theme(name)
-    pal = t.palette
-    bg = BG.get(name, "#1e1e1e")
-    dim, fg = t.dim, (t.fg or "#cccccc")
-
-    badge_col = len(TIME) + 1          # after "time "
-    msg_col = badge_col + 10 + 1       # badge is " {tag:^8} " = 10 chars
-    max_chars = msg_col + max(len(m) for _, _, m in BG_LINES)
-
-    width = int(LEFT * 2 + max_chars * CW)
-    height = int(TOP + len(BG_LINES) * LH + 12)
-    p = _window_open(width, height, f"{name} · colored backgrounds", dim, bg)
-
-    for idx, (cname, tag, msg) in enumerate(BG_LINES):
-        color = getattr(pal, cname)
-        y = TOP + idx * LH
-        bx = LEFT + badge_col * CW
-        p.append(
-            f'<rect x="{bx:.1f}" y="{y - FS + 2:.1f}" width="{10 * CW:.1f}" '
-            f'height="{LH - 5}" fill="{color}"/>'
-        )
-        badge = f" {tag:^8} "
-        for s in (
-            _seg(0, TIME, dim, 400),
-            _seg(badge_col, badge, readable(color), 700),
-            _seg(msg_col, msg, fg, 400),
-        ):
-            p.append(s.replace("{y}", str(y)))
-    p.append("</svg>")
-    return "\n".join(p)
-
-
 def main() -> None:
     here = os.path.dirname(os.path.abspath(__file__))
     out_dir = os.path.join(here, "..", "docs", "src", "assets", "themes")
@@ -207,7 +163,6 @@ def main() -> None:
         variants = (
             (f"{name}", render_log(name)),
             (f"{name}-palette", render_palette(name)),
-            (f"{name}-bg", render_bg(name)),
         )
         for suffix, svg in variants:
             path = os.path.join(out_dir, f"{suffix}.svg")
