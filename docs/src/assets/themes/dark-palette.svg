@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="924" height="142" viewBox="0 0 924 142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+<rect width="924" height="142" rx="10" fill="#0d1117"/>
+<circle cx="22" cy="17" r="6" fill="#ff5f56"/>
+<circle cx="42" cy="17" r="6" fill="#ffbd2e"/>
+<circle cx="62" cy="17" r="6" fill="#27c93f"/>
+<text x="462" y="22" fill="#6b7280" font-size="13" text-anchor="middle">dark · palette</text>
+<rect x="18" y="46" width="104" height="38" rx="5" fill="#1f2937"/>
+<text x="70" y="69" fill="#f5f5f5" font-size="12" text-anchor="middle">black</text>
+<rect x="130" y="46" width="104" height="38" rx="5" fill="#ef4444"/>
+<text x="182" y="69" fill="#f5f5f5" font-size="12" text-anchor="middle">red</text>
+<rect x="242" y="46" width="104" height="38" rx="5" fill="#22c55e"/>
+<text x="294" y="69" fill="#f5f5f5" font-size="12" text-anchor="middle">green</text>
+<rect x="354" y="46" width="104" height="38" rx="5" fill="#f59e0b"/>
+<text x="406" y="69" fill="#11111b" font-size="12" text-anchor="middle">yellow</text>
+<rect x="466" y="46" width="104" height="38" rx="5" fill="#38bdf8"/>
+<text x="518" y="69" fill="#11111b" font-size="12" text-anchor="middle">blue</text>
+<rect x="578" y="46" width="104" height="38" rx="5" fill="#a78bfa"/>
+<text x="630" y="69" fill="#11111b" font-size="12" text-anchor="middle">magenta</text>
+<rect x="690" y="46" width="104" height="38" rx="5" fill="#2dd4bf"/>
+<text x="742" y="69" fill="#11111b" font-size="12" text-anchor="middle">cyan</text>
+<rect x="802" y="46" width="104" height="38" rx="5" fill="#e5e7eb"/>
+<text x="854" y="69" fill="#11111b" font-size="12" text-anchor="middle">white</text>
+<rect x="18" y="92" width="104" height="38" rx="5" fill="#6b7280"/>
+<text x="70" y="115" fill="#f5f5f5" font-size="12" text-anchor="middle">+black</text>
+<rect x="130" y="92" width="104" height="38" rx="5" fill="#f87171"/>
+<text x="182" y="115" fill="#11111b" font-size="12" text-anchor="middle">+red</text>
+<rect x="242" y="92" width="104" height="38" rx="5" fill="#4ade80"/>
+<text x="294" y="115" fill="#11111b" font-size="12" text-anchor="middle">+green</text>
+<rect x="354" y="92" width="104" height="38" rx="5" fill="#fbbf24"/>
+<text x="406" y="115" fill="#11111b" font-size="12" text-anchor="middle">+yellow</text>
+<rect x="466" y="92" width="104" height="38" rx="5" fill="#60a5fa"/>
+<text x="518" y="115" fill="#11111b" font-size="12" text-anchor="middle">+blue</text>
+<rect x="578" y="92" width="104" height="38" rx="5" fill="#c4b5fd"/>
+<text x="630" y="115" fill="#11111b" font-size="12" text-anchor="middle">+magenta</text>
+<rect x="690" y="92" width="104" height="38" rx="5" fill="#5eead4"/>
+<text x="742" y="115" fill="#11111b" font-size="12" text-anchor="middle">+cyan</text>
+<rect x="802" y="92" width="104" height="38" rx="5" fill="#f9fafb"/>
+<text x="854" y="115" fill="#11111b" font-size="12" text-anchor="middle">+white</text>
+</svg>

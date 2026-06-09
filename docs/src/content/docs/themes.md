@@ -40,6 +40,23 @@ window's title bar):
 
 ![light theme log output](../../assets/themes/light.svg)
 
+## Palette (background colors)
+
+The 16-color palette of each theme — the colors native tags like `<red>` /
+`<RED>` map to:
+
+![dracula palette](../../assets/themes/dracula-palette.svg)
+
+![nord palette](../../assets/themes/nord-palette.svg)
+
+![catppuccin palette](../../assets/themes/catppuccin-palette.svg)
+
+![monokai palette](../../assets/themes/monokai-palette.svg)
+
+![dark palette](../../assets/themes/dark-palette.svg)
+
+![light palette](../../assets/themes/light-palette.svg)
+
 ## Listing themes
 
 ```python

@@ -1,6 +1,11 @@
-"""Render a terminal-style SVG "screenshot" of sample logs for each built-in theme.
+"""Render terminal-style SVG "screenshots" for each built-in theme.
 
-Output: docs/src/assets/themes/<name>.svg  (embedded in the docs).
+Produces, per theme, into docs/src/assets/themes/:
+  <name>.svg          - sample log output (all levels)
+  <name>-palette.svg  - the 16 ANSI palette colors as background swatches
+
+Each text segment uses textLength + lengthAdjust so the layout is exact
+regardless of the viewer's monospace font (keeps the CRITICAL background aligned).
 
 Run:  python tools/render_theme_svgs.py
 """
@@ -12,7 +17,6 @@ import os
 
 from loguru_themes import get_theme, list_themes
 
-# (level, message) sample lines — same set the docs use.
 ENTRIES = [
     ("TRACE", "entering low-level routine"),
     ("DEBUG", "resolved config from environment"),
@@ -36,36 +40,36 @@ BG = {
 TIME = "10:30:00"
 LOC = "app:42"
 
-FS = 15          # font size
-CW = FS * 0.6    # monospace advance width
-LH = 26          # line height
+FS = 15
+CW = 9.0       # grid cell width per character (text is fit to this exactly)
+LH = 26
 LEFT = 18
 TITLE_H = 34
 TOP = TITLE_H + 24
+
+BASE = ["black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"]
 
 
 def esc(s: str) -> str:
     return html.escape(s, quote=False)
 
 
-def render(name: str) -> str:
-    t = get_theme(name)
-    bg = BG.get(name, "#1e1e1e")
-    dim = t.dim
-    fg = t.fg or "#cccccc"
+def readable(hex_color: str) -> str:
+    h = hex_color.lstrip("#")
+    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    return "#11111b" if (0.299 * r + 0.587 * g + 0.114 * b) > 140 else "#f5f5f5"
 
-    rows = []
-    max_chars = 0
-    for lvl, msg in ENTRIES:
-        st = t.levels[lvl]
-        badge = f"{t.icons.get(lvl)} {lvl:<8}"  # icon + space + padded name
-        prefix = f"{TIME} {badge} {LOC} "
-        max_chars = max(max_chars, len(prefix) + len(msg))
-        rows.append((st, badge, msg, prefix))
 
-    width = int(LEFT * 2 + max_chars * CW)
-    height = int(TOP + len(ENTRIES) * LH + 12)
+def _seg(x_col: int, text: str, fill: str, weight: int) -> str:
+    """A text segment fit to exactly len(text) grid cells starting at x_col."""
+    return (
+        f'<text x="{LEFT + x_col * CW:.1f}" y="{{y}}" fill="{fill}" '
+        f'font-weight="{weight}" textLength="{len(text) * CW:.1f}" '
+        f'lengthAdjust="spacingAndGlyphs" xml:space="preserve">{esc(text)}</text>'
+    )
 
+
+def _window_open(width: int, height: int, name: str, dim: str, bg: str) -> list[str]:
     p = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" '
@@ -73,35 +77,77 @@ def render(name: str) -> str:
         f'font-size="{FS}">',
         f'<rect width="{width}" height="{height}" rx="10" fill="{bg}"/>',
     ]
-    # window "traffic lights"
     for i, c in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
         p.append(f'<circle cx="{LEFT + 4 + i * 20}" cy="17" r="6" fill="{c}"/>')
-    # title
     p.append(
         f'<text x="{width / 2:.0f}" y="22" fill="{dim}" font-size="13" '
         f'text-anchor="middle">{esc(name)}</text>'
     )
+    return p
 
-    for idx, (st, badge, msg, prefix) in enumerate(rows):
+
+def render_log(name: str) -> str:
+    t = get_theme(name)
+    bg = BG.get(name, "#1e1e1e")
+    dim, fg = t.dim, (t.fg or "#cccccc")
+
+    badge_col = len(TIME) + 1            # after "time "
+    loc_col = badge_col + 10 + 1         # after "time badge "
+    msg_col = loc_col + len(LOC) + 1     # after "time badge loc "
+    max_chars = msg_col + max(len(m) for _, m in ENTRIES)
+
+    width = int(LEFT * 2 + max_chars * CW)
+    height = int(TOP + len(ENTRIES) * LH + 12)
+    p = _window_open(width, height, name, dim, bg)
+
+    for idx, (lvl, msg) in enumerate(ENTRIES):
+        st = t.levels[lvl]
         y = TOP + idx * LH
-        msg_x = LEFT + len(prefix) * CW
-        mfg = st.msg_fg or fg
         if st.msg_bg:
-            rw = (len(msg) + 1) * CW
+            x = LEFT + msg_col * CW
             p.append(
-                f'<rect x="{msg_x - 3:.1f}" y="{y - FS + 3:.1f}" width="{rw:.1f}" '
-                f'height="{LH - 7}" rx="3" fill="{st.msg_bg}"/>'
+                f'<rect x="{x - 3:.1f}" y="{y - FS + 3:.1f}" '
+                f'width="{len(msg) * CW + 6:.1f}" height="{LH - 7}" rx="3" '
+                f'fill="{st.msg_bg}"/>'
             )
-        badge_w = "700" if st.bold else "400"
-        msg_w = "700" if st.msg_bold else "400"
-        p.append(
-            f'<text xml:space="preserve" y="{y}">'
-            f'<tspan x="{LEFT}" fill="{dim}">{esc(TIME)} </tspan>'
-            f'<tspan fill="{st.color}" font-weight="{badge_w}">{esc(badge)}</tspan>'
-            f'<tspan fill="{dim}"> {esc(LOC)} </tspan>'
-            f'<tspan fill="{mfg}" font-weight="{msg_w}">{esc(msg)}</tspan>'
-            f"</text>"
-        )
+        badge = f"{t.icons.get(lvl)} {lvl:<8}"
+        segs = [
+            _seg(0, TIME, dim, 400),
+            _seg(badge_col, badge, st.color, 700 if st.bold else 400),
+            _seg(loc_col, LOC, dim, 400),
+            _seg(msg_col, msg, st.msg_fg or fg, 700 if st.msg_bold else 400),
+        ]
+        for s in segs:
+            p.append(s.replace("{y}", str(y)))
+    p.append("</svg>")
+    return "\n".join(p)
+
+
+def render_palette(name: str) -> str:
+    t = get_theme(name)
+    pal = t.palette
+    bg = BG.get(name, "#1e1e1e")
+    dim = t.dim
+
+    cell_w, cell_h, gap = 104, 38, 8
+    cols = 8
+    top = TITLE_H + 12
+    width = int(LEFT * 2 + cols * cell_w + (cols - 1) * gap)
+    height = int(top + 2 * (cell_h + gap) + 4)
+    p = _window_open(width, height, f"{name} · palette", dim, bg)
+
+    rows = [("", BASE), ("+", ["bright_" + c for c in BASE])]
+    for r, (prefix, names) in enumerate(rows):
+        y = top + r * (cell_h + gap)
+        for i, cname in enumerate(names):
+            hexv = getattr(pal, cname)
+            x = LEFT + i * (cell_w + gap)
+            label = prefix + cname.replace("bright_", "")
+            p.append(f'<rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" rx="5" fill="{hexv}"/>')
+            p.append(
+                f'<text x="{x + cell_w / 2:.0f}" y="{y + cell_h / 2 + 4:.0f}" '
+                f'fill="{readable(hexv)}" font-size="12" text-anchor="middle">{esc(label)}</text>'
+            )
     p.append("</svg>")
     return "\n".join(p)
 
@@ -111,10 +157,11 @@ def main() -> None:
     out_dir = os.path.join(here, "..", "docs", "src", "assets", "themes")
     os.makedirs(out_dir, exist_ok=True)
     for name in list_themes():
-        path = os.path.join(out_dir, f"{name}.svg")
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(render(name))
-        print("wrote", os.path.relpath(path, os.path.join(here, "..")))
+        for suffix, svg in ((f"{name}", render_log(name)), (f"{name}-palette", render_palette(name))):
+            path = os.path.join(out_dir, f"{suffix}.svg")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(svg)
+            print("wrote", os.path.relpath(path, os.path.join(here, "..")))
 
 
 if __name__ == "__main__":

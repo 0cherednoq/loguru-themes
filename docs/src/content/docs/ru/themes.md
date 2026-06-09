@@ -39,6 +39,23 @@ apply_theme(logger, "monokai")
 
 ![вывод темы light](../../../assets/themes/light.svg)
 
+## Палитра (фоновые цвета)
+
+16-цветная палитра каждой темы — именно в эти цвета мапятся нативные теги вроде
+`<red>` / `<RED>`:
+
+![палитра dracula](../../../assets/themes/dracula-palette.svg)
+
+![палитра nord](../../../assets/themes/nord-palette.svg)
+
+![палитра catppuccin](../../../assets/themes/catppuccin-palette.svg)
+
+![палитра monokai](../../../assets/themes/monokai-palette.svg)
+
+![палитра dark](../../../assets/themes/dark-palette.svg)
+
+![палитра light](../../../assets/themes/light-palette.svg)
+
 ## Список тем
 
 ```python
