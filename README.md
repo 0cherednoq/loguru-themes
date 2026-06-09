@@ -31,16 +31,16 @@ logger.critical("data corruption detected — aborting")
 
 <table>
   <tr>
-    <td><img src=".github/assets/dracula.png" alt="dracula theme" width="100%"></td>
-    <td><img src=".github/assets/nord.png" alt="nord theme" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/0cherednoq/loguru-themes/main/.github/assets/dracula.png" alt="dracula theme" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/0cherednoq/loguru-themes/main/.github/assets/nord.png" alt="nord theme" width="100%"></td>
   </tr>
   <tr>
-    <td><img src=".github/assets/catppuccin.png" alt="catppuccin theme" width="100%"></td>
-    <td><img src=".github/assets/monokai.png" alt="monokai theme" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/0cherednoq/loguru-themes/main/.github/assets/catppuccin.png" alt="catppuccin theme" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/0cherednoq/loguru-themes/main/.github/assets/monokai.png" alt="monokai theme" width="100%"></td>
   </tr>
   <tr>
-    <td><img src=".github/assets/dark.png" alt="dark theme" width="100%"></td>
-    <td><img src=".github/assets/light.png" alt="light theme" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/0cherednoq/loguru-themes/main/.github/assets/dark.png" alt="dark theme" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/0cherednoq/loguru-themes/main/.github/assets/light.png" alt="light theme" width="100%"></td>
   </tr>
 </table>
 
